@@ -29,6 +29,12 @@ namespace Acme.BookStore.Web.Menus
             var l = context.ServiceProvider.GetRequiredService<IStringLocalizer<BookStoreResource>>();
 
             context.Menu.Items.Insert(0, new ApplicationMenuItem("BookStore.Home", l["Menu:Home"], "/"));
+            context.Menu.AddItem(
+                new ApplicationMenuItem("BookStore", l["Menu:BookStore"])
+                .AddItem(
+                    new ApplicationMenuItem("BookStore.books", l["Menu:Books"], url: "/Books")
+                    )
+                );
         }
     }
 }

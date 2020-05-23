@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Volo.Abp.Application.Dtos;
 
 namespace Acme.BookStore
 {
@@ -9,7 +10,7 @@ namespace Acme.BookStore
     // information ont the UI.
     // BookDto is derived from the AuditedEntityDto<Guid> which has audit properties just like 
     // the Book class defined above.
-    public class BookDto
+    public class BookDto : AuditedEntityDto<Guid>
     {
         public string Name { get; set; }
         public BookType Type { get; set; }
